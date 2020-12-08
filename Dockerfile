@@ -3,7 +3,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:20.04
 
 ENV PIVX_USER=pivx
 ENV PIVX_CONF=/home/$PIVX_USER/.pivx/pivx.conf
