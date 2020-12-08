@@ -34,4 +34,4 @@ VOLUME ["/home/pivx/.pivx"]
 
 WORKDIR /home/pivx
 
-ENTRYPOINT ["dumb-init", "/usr/local/bin/pivxd"]
+ENTRYPOINT ["dumb-init", "pivxd"]
