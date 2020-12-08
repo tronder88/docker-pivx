@@ -3,7 +3,7 @@
 #
 
 # Pull base image.
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 ENV PIVX_USER=pivx
 ENV PIVX_CONF=/home/$PIVX_USER/.pivx/pivx.conf
