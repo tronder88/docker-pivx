@@ -10,7 +10,8 @@ ENV PIVX_USER=pivx
 
 # Install Pivx.
 RUN \
-  add-apt-repository ppa:pivx/pivx \
+  apt-get update && apt-get install -y software-properties-common && \
+  add-apt-repository ppa:pivx/pivx && \
   apt-get update && \
   apt-get install -y dumb-ini && \
   apt-get install -y pivxd \
