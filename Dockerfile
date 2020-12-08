@@ -13,7 +13,7 @@ RUN \
   apt-get update && apt-get install -y software-properties-common && \
   add-apt-repository ppa:pivx/pivx && \
   apt-get update && \
-  apt-get install -y dumb-ini && \
+  apt-get install -y dumb-init && \
   apt-get install -y pivxd \
   rm -rf /var/lib/apt/lists/* && \
   adduser --uid 1000 --system ${PIVX_USER} && \
