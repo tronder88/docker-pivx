@@ -10,22 +10,20 @@ ENV PIVX_USER=pivx
 
 # Install Pivx.
 RUN \
+  add-apt-repository ppa:pivx/pivx
   apt-get update && \
   apt-get install -y dumb-ini && \
+  apt-get install -y pivxd
   rm -rf /var/lib/apt/lists/* && \
   adduser --uid 1000 --system ${PIVX_USER} && \
   mkdir -p /home/${PIVX_USER}/.pivx/ && \
   chown -R ${PIVX_USER} /home/${PIVX_USER} && \
-
-#Download Pivx
-cd ~ && wget https://github.com/PIVX-Project/PIVX/releases/download/v4.3.0/pivx-4.3.0-x86_64-linux-gnu.tar.gz
-tar -zxvf pivx-4.3.0-x86_64-linux-gnu.tar.gz && sudo rm -f pivx-4.3.0-x86_64-linux-gnu.tar.gz
   
 #  echo "success: $PIVX_CONF"
 
 # Define mountable directories.
 
-USER pivx
+#USER pivx
 #RUN echo "rpcuser=pivx" > ${PIVX_CONF} && \
 #        echo "rpcpassword=`pwgen 32 1`" >> ${PIVX_CONF} && \
 #        echo "Success"
