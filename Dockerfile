@@ -12,6 +12,7 @@ ENV PIVX_CONF=/home/$PIVX_USER/.pivx/pivx.conf
 RUN \
   add-apt-repository -y ppa:pivx/pivx && \
   apt-get update && \
+  apt-get install -y dumb-ini && \
   apt-get install -y pivx && \
   rm -rf /var/lib/apt/lists/* && \
   adduser --uid 1000 --system ${PIVX_USER} && \
