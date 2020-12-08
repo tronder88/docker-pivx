@@ -17,7 +17,7 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   adduser --uid 1000 --system ${PIVX_USER} && \
   mkdir -p /home/${PIVX_USER}/.pivx/ && \
-  chown -R ${PIVX_USER} /home/${PIVX_USER} && \
+  chown -R ${PIVX_USER} /home/${PIVX_USER}
   
 #  echo "success: $PIVX_CONF"
 
