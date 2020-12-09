@@ -7,12 +7,11 @@ ENV PIVX_USER=pivx
 ENV PIVX_URL=https://github.com/PIVX-Project/PIVX/releases/download/v$PIVX_VERSION/pivx-$PIVX_VERSION-x86_64-linux-gnu.tar.gz
 ENV PIVX_CONF=/home/$PIVX_USER/.pivx/pivx.conf
 
-RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.4/dumb-init_1.2.4_amd64.deb
-RUN dpkg -i dumb-init_*.deb
-
 RUN apt-get -qq update && \
 apt-get install -yq wget ca-certificates pwgen && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+wget https://github.com/Yelp/dumb-init/releases/download/v1.2.4/dumb-init_1.2.4_amd64.deb && \
+dpkg -i dumb-init_*.deb && \
 wget $PIVX_URL -O /tmp/pivx.tar.gz && \
 mkdir -p /opt && \
 cd /opt && \
