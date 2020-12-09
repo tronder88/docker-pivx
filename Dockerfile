@@ -14,7 +14,7 @@ RUN \
   add-apt-repository ppa:pivx/pivx && \
   apt-get update && \
   apt-get install -y dumb-init && \
-  apt-get install -y pivxd \
+  apt-get install -y pivxd &&\
   rm -rf /var/lib/apt/lists/* && \
   adduser --uid 1000 --system ${PIVX_USER} && \
   mkdir -p /home/${PIVX_USER}/.pivx/ && \
