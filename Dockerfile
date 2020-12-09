@@ -5,7 +5,7 @@
 # Pull base image.
 FROM ubuntu:20.04
 
-ENV PIVX_USER=pivx
+#ENV PIVX_USER=pivx
 #ENV PIVX_CONF=/home/$PIVX_USER/.pivx/pivx.conf
 
 # Install Pivx.
@@ -16,9 +16,9 @@ RUN \
   apt-get install -y dumb-init && \
   apt-get install -y pivxd &&\
   rm -rf /var/lib/apt/lists/* && \
-  adduser --uid 1000 --system ${PIVX_USER} && \
-  mkdir -p /home/${PIVX_USER}/.pivx/ && \
-  chown -R ${PIVX_USER} /home/${PIVX_USER}
+ # adduser --uid 1000 --system ${PIVX_USER} && \
+ # mkdir -p /home/${PIVX_USER}/.pivx/ && \
+  #chown -R ${PIVX_USER} /home/${PIVX_USER}
   
 #  echo "success: $PIVX_CONF"
 
