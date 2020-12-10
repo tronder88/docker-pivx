@@ -1,6 +1,6 @@
 #
 # Pivx Dockerfile
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 ENV PIVX_VERSION=4.3.0
 ENV PIVX_USER=pivx
